@@ -277,15 +277,6 @@
       object-fit: cover;
     }
 
-    .media-placeholder {
-      background: #f9fafb;
-      border: 1px dashed #94a3b8;
-      border-radius: 14px;
-      padding: 18px;
-      margin-top: 18px;
-      color: #475569;
-    }
-
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -310,6 +301,12 @@
       width: 100%;
       border-radius: 12px;
       background: #000;
+    }
+
+    .video-card p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #4b5563;
     }
 
     .award-grid {
@@ -647,14 +644,23 @@
         onerror="this.style.display='none';"
       />
 
-      <div class="media-placeholder">
-        <p class="block zh">
-          项目视频将后续补充。建议最终放 1 个压缩后的综合展示视频，而不是把所有中间过程视频都塞进主页。
-        </p>
+      <div class="video-grid">
+        <div class="video-card">
+          <h4>
+            <span class="zh">人形机器人动作模仿综合展示</span>
+            <span class="en">Humanoid Motion Imitation Demo</span>
+          </h4>
 
-        <p class="block en">
-          Project videos will be added later. A compressed final demo video is recommended instead of placing every intermediate video on the homepage.
-        </p>
+          <video controls muted preload="metadata" poster="assets/images/g1_pipeline.jpg">
+            <source src="assets/videos/rslrl_policy.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p>
+            <span class="zh">从人体动作视频到 Unitree G1 仿真动作模仿的综合展示。</span>
+            <span class="en">A demo showing the workflow from human motion video to Unitree G1 motion imitation in simulation.</span>
+          </p>
+        </div>
       </div>
     </div>
 
