@@ -137,6 +137,11 @@
       color: #111827;
     }
 
+    h4 {
+      margin: 0 0 10px;
+      color: #111827;
+    }
+
     .card {
       background: white;
       padding: 28px;
@@ -190,6 +195,86 @@
       border-radius: 14px;
       margin-top: 16px;
       border: 1px solid #e5e7eb;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .image-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: #e5e7eb;
+    }
+
+    .image-card p {
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .competition-section {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .competition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .competition-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    .competition-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .competition-card .competition-meta {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .competition-media {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .competition-media img,
+    .competition-media video {
+      width: 100%;
+      border-radius: 12px;
+      background: #000;
+      border: 1px solid #e5e7eb;
+    }
+
+    .competition-media img {
+      height: 170px;
+      object-fit: cover;
     }
 
     .media-placeholder {
@@ -383,6 +468,11 @@
       .pdf-icon {
         height: 140px;
       }
+
+      .image-card img,
+      .competition-media img {
+        height: 150px;
+      }
     }
   </style>
 </head>
@@ -527,16 +617,13 @@
         本项目构建了一套从普通人体动作视频到人形机器人模仿训练的完整流程。
         首先使用 GVHMR 从 MP4 视频中恢复人体三维运动，再通过 GMR 将人体动作重定向到 Unitree G1 人形机器人模型，
         随后将动作数据转换为 RSL-RL / Isaac Lab 可用于训练的数据格式，并进行强化学习模仿训练与策略测试。
-        项目重点解决人体动作恢复、机器人关节映射、动作数据转换、仿真训练和策略验证之间的工程衔接问题。
       </p>
 
       <p class="block en">
         This project builds an end-to-end pipeline from ordinary human motion videos to humanoid robot imitation learning.
         GVHMR is used to recover 3D human motion from MP4 videos, and GMR is then applied to retarget the recovered motion
         to the Unitree G1 humanoid robot model. The retargeted motion data is converted into formats suitable for
-        RSL-RL / Isaac Lab training, followed by reinforcement learning-based motion imitation and policy evaluation.
-        The project focuses on the engineering connection between human motion recovery, robot joint mapping,
-        motion data conversion, simulation training, and policy testing.
+        RSL-RL / Isaac Lab training.
       </p>
 
       <ul class="block zh">
@@ -544,7 +631,6 @@
         <li>使用 GMR 将人体 SMPL / SMPL-X 动作重定向到 Unitree G1 机器人关节空间。</li>
         <li>将动作数据转换为机器人模仿学习训练所需的 NPZ / 轨迹数据格式。</li>
         <li>基于 RSL-RL / Isaac Lab 进行人形机器人动作模仿训练。</li>
-        <li>完成从视频输入、动作恢复、机器人重定向到仿真策略测试的完整闭环。</li>
       </ul>
 
       <ul class="block en">
@@ -552,7 +638,6 @@
         <li>Retargeted SMPL / SMPL-X human motion to the Unitree G1 robot joint space using GMR.</li>
         <li>Converted motion data into NPZ / trajectory formats required for robot imitation learning.</li>
         <li>Trained humanoid motion imitation policies using RSL-RL / Isaac Lab.</li>
-        <li>Completed an end-to-end workflow from video input and motion recovery to robot retargeting and policy testing.</li>
       </ul>
 
       <img
@@ -565,31 +650,12 @@
       <div class="media-placeholder">
         <p class="block zh">
           项目视频将后续补充。建议最终放 1 个压缩后的综合展示视频，而不是把所有中间过程视频都塞进主页。
-          主页要展示结果，不要变成文件仓库。
         </p>
 
         <p class="block en">
           Project videos will be added later. A compressed final demo video is recommended instead of placing every intermediate video on the homepage.
-          The homepage should demonstrate results, not act as a file archive.
         </p>
       </div>
-
-      <!--
-      视频处理好之后，把下面这段取消注释，并把视频放到 assets/videos/rslrl_policy.mp4
-
-      <div class="video-grid">
-        <div class="video-card">
-          <h4>
-            <span class="zh">人形机器人动作模仿结果展示</span>
-            <span class="en">Humanoid Motion Imitation Demo</span>
-          </h4>
-
-          <video controls muted preload="metadata">
-            <source src="assets/videos/rslrl_policy.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-      -->
     </div>
 
     <div class="card">
@@ -626,40 +692,202 @@
         <li>Improved ball-position sensing using a reflective infrared array, upgrading the ball-position information from one dimension to two dimensions.</li>
         <li>Achieved strong competition results, including runner-up in RoboCup Small Size League, first prize in RoboCup China Open, third place in RoboCup Japan Open, and second prize in the Zhejiang Robot Competition.</li>
       </ul>
+
+      <div class="competition-section">
+        <h4>
+          <span class="zh">比赛照片与视频</span>
+          <span class="en">Competition Photos and Videos</span>
+        </h4>
+
+        <p class="block zh">
+          以下展示 RoboCup 世界赛、国赛和省赛相关照片与短视频，用于展示机器人系统在真实比赛环境中的运行和调试情况。
+        </p>
+
+        <p class="block en">
+          The following media shows photos and short videos from RoboCup world, national, and provincial competitions,
+          demonstrating the robot system in real competition and debugging environments.
+        </p>
+
+        <div class="competition-grid">
+          <div class="competition-card">
+            <h4>
+              <span class="zh">世界赛</span>
+              <span class="en">World Competition</span>
+            </h4>
+            <div class="competition-meta">RoboCup Small Size League</div>
+
+            <div class="competition-media">
+              <img src="assets/images/世界赛/world_1.jpg" alt="RoboCup world competition photo 1" onerror="this.style.display='none';">
+              <img src="assets/images/世界赛/world_2.jpg" alt="RoboCup world competition photo 2" onerror="this.style.display='none';">
+              <video controls muted preload="metadata" onerror="this.style.display='none';">
+                <source src="assets/images/世界赛/world_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="competition-card">
+            <h4>
+              <span class="zh">国赛</span>
+              <span class="en">National Competition</span>
+            </h4>
+            <div class="competition-meta">RoboCup China Open</div>
+
+            <div class="competition-media">
+              <img src="assets/images/国赛/china_1.jpg" alt="RoboCup China competition photo 1" onerror="this.style.display='none';">
+              <img src="assets/images/国赛/china_2.jpg" alt="RoboCup China competition photo 2" onerror="this.style.display='none';">
+              <video controls muted preload="metadata" onerror="this.style.display='none';">
+                <source src="assets/images/国赛/china_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="competition-card">
+            <h4>
+              <span class="zh">省赛</span>
+              <span class="en">Provincial Competition</span>
+            </h4>
+            <div class="competition-meta">Zhejiang Robot Competition</div>
+
+            <div class="competition-media">
+              <img src="assets/images/省赛/zhejiang_1.jpg" alt="Zhejiang competition photo 1" onerror="this.style.display='none';">
+              <img src="assets/images/省赛/zhejiang_2.jpg" alt="Zhejiang competition photo 2" onerror="this.style.display='none';">
+              <video controls muted preload="metadata" onerror="this.style.display='none';">
+                <source src="assets/images/省赛/zhejiang_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="card">
       <h3>
-        <span class="zh">压力传感手套与六维力传感器</span>
-        <span class="en">Pressure-sensing Glove and Six-axis Force Sensor</span>
+        <span class="zh">六维力传感器数据采集系统</span>
+        <span class="en">Six-axis Force Sensor Data Acquisition System</span>
       </h3>
 
       <div class="meta">Hangzhou Tuling Robot | 2024.03 - 2025.01</div>
 
       <div class="tag-list">
+        <span class="tag">Six-axis Force Sensor</span>
         <span class="tag">ESP32-S3</span>
         <span class="tag">SPI</span>
         <span class="tag">UART</span>
         <span class="tag">KiCad</span>
-        <span class="tag">Matplotlib</span>
-        <span class="tag">Sensor System</span>
+        <span class="tag">Sensor Acquisition</span>
       </div>
 
+      <p class="block zh">
+        该项目面向机械臂末端力感知应用，设计并开发了基于 ESP32-S3 和专用采集芯片的六维力传感器数据采集系统。
+        工作内容包括原理图设计、PCB 设计、硬件焊接、SPI 通信协议编写、UART 数据传输以及上位机数据可视化。
+        项目成果已用于机械臂末端感知测试。
+      </p>
+
+      <p class="block en">
+        This project focused on force sensing for robotic arm end-effectors.
+        I designed and developed a six-axis force sensor data acquisition system based on ESP32-S3 and dedicated acquisition chips.
+        The work included schematic design, PCB design, soldering, SPI communication, UART data transmission,
+        and host-computer data visualization.
+      </p>
+
       <ul class="block zh">
-        <li>设计并开发基于 ESP32-S3 和专用采集芯片的传感器数据采集系统。</li>
-        <li>使用 KiCad 完成原理图和 PCB 设计，并进行焊接和硬件调试。</li>
-        <li>基于 ESP-IDF 使用 C 语言编写 SPI 通信协议，实现传感器数据采集。</li>
-        <li>通过 UART 将传感器数据传输至上位机，并使用 Python Matplotlib 进行数据可视化。</li>
-        <li>六维力传感器已用于机械臂末端感知测试。</li>
+        <li>基于 ESP32-S3 和专用采集芯片搭建六维力传感器采集系统。</li>
+        <li>使用 KiCad 完成原理图和 PCB 设计，并进行焊接与硬件调试。</li>
+        <li>使用 ESP-IDF 编写 SPI 通信协议，实现传感器数据读取。</li>
+        <li>通过 UART 将采集数据发送至上位机，用于后续分析和可视化。</li>
+        <li>系统已用于机械臂末端力感知测试。</li>
       </ul>
 
       <ul class="block en">
-        <li>Designed and developed sensor acquisition systems based on ESP32-S3 and dedicated acquisition chips.</li>
+        <li>Built a six-axis force sensor acquisition system based on ESP32-S3 and dedicated acquisition chips.</li>
         <li>Completed schematic and PCB design using KiCad, followed by soldering and hardware debugging.</li>
-        <li>Implemented SPI communication in C using ESP-IDF for sensor data acquisition.</li>
-        <li>Transmitted sensor data to the host computer through UART and visualized the data using Python Matplotlib.</li>
-        <li>The six-axis force sensor was used for end-effector sensing tests on robotic arms.</li>
+        <li>Implemented SPI communication using ESP-IDF for sensor data acquisition.</li>
+        <li>Transmitted collected data to the host computer through UART for analysis and visualization.</li>
+        <li>Used the system for robotic arm end-effector force sensing tests.</li>
       </ul>
+
+      <div class="image-grid">
+        <div class="image-card">
+          <img src="assets/images/force_sensor_1.jpg" alt="Six-axis force sensor" onerror="this.parentElement.style.display='none';">
+          <p>
+            <span class="zh">六维力传感器实物</span>
+            <span class="en">Six-axis force sensor prototype</span>
+          </p>
+        </div>
+
+        <div class="image-card">
+          <img src="assets/images/force_sensor_pcb.jpg" alt="Six-axis force sensor PCB" onerror="this.parentElement.style.display='none';">
+          <p>
+            <span class="zh">传感器采集 PCB / 硬件调试</span>
+            <span class="en">Sensor acquisition PCB / hardware debugging</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="zh">压力传感手套数据采集与可视化系统</span>
+        <span class="en">Pressure-sensing Glove Data Acquisition and Visualization System</span>
+      </h3>
+
+      <div class="meta">Hangzhou Tuling Robot | 2024.03 - 2025.01</div>
+
+      <div class="tag-list">
+        <span class="tag">Pressure Sensor</span>
+        <span class="tag">Wearable Sensing</span>
+        <span class="tag">ESP32-S3</span>
+        <span class="tag">SPI</span>
+        <span class="tag">UART</span>
+        <span class="tag">Matplotlib</span>
+      </div>
+
+      <p class="block zh">
+        该项目面向可穿戴压力感知场景，设计并开发了压力传感手套的数据采集与上位机可视化系统。
+        系统通过 ESP32-S3 读取多个压力传感通道的数据，并通过 UART 传输至上位机，
+        再使用 Python 和 Matplotlib 对压力数据进行实时或离线可视化，用于观察手部不同区域的受力变化。
+      </p>
+
+      <p class="block en">
+        This project focused on wearable pressure sensing.
+        I designed and developed a pressure-sensing glove data acquisition and visualization system.
+        The ESP32-S3 reads data from multiple pressure sensing channels and transmits the data to a host computer through UART.
+        Python and Matplotlib are then used to visualize pressure changes across different hand regions.
+      </p>
+
+      <ul class="block zh">
+        <li>设计压力传感手套的数据采集系统，实现多通道压力数据读取。</li>
+        <li>基于 ESP-IDF 编写嵌入式程序，完成传感器通信与数据处理。</li>
+        <li>通过 UART 将传感器数据传输至上位机。</li>
+        <li>使用 Python Matplotlib 对压力数据进行可视化，辅助分析手部受力变化。</li>
+        <li>完成从传感器采集、嵌入式传输到上位机显示的完整数据链路。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Designed a data acquisition system for a pressure-sensing glove with multiple pressure channels.</li>
+        <li>Developed embedded software using ESP-IDF for sensor communication and data processing.</li>
+        <li>Transmitted sensor data to the host computer through UART.</li>
+        <li>Used Python Matplotlib to visualize pressure data and analyze force distribution across the hand.</li>
+        <li>Completed the full data pipeline from sensor acquisition and embedded transmission to host-computer visualization.</li>
+      </ul>
+
+      <div class="image-grid">
+        <div class="image-card">
+          <img src="assets/images/glove_1.jpg" alt="Pressure-sensing glove" onerror="this.parentElement.style.display='none';">
+          <p>
+            <span class="zh">压力传感手套实物</span>
+            <span class="en">Pressure-sensing glove prototype</span>
+          </p>
+        </div>
+
+        <div class="image-card">
+          <img src="assets/images/glove_data_visualization.jpg" alt="Pressure data visualization" onerror="this.parentElement.style.display='none';">
+          <p>
+            <span class="zh">压力数据上位机可视化</span>
+            <span class="en">Pressure data visualization on host computer</span>
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="card">
@@ -848,15 +1076,6 @@
           The final thesis or defense materials can be added after university submission.
         </p>
       </div>
-
-      <!--
-      毕业论文最终版完成后，可以取消下面按钮注释，并把文件放到 assets/papers/graduation_thesis.pdf
-
-      <a class="btn btn-dark" href="assets/papers/graduation_thesis.pdf" target="_blank">
-        <span class="zh">查看毕业论文 PDF</span>
-        <span class="en">View Thesis PDF</span>
-      </a>
-      -->
     </div>
   </section>
 
