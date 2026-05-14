@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Caleb Chai | Personal Homepage</title>
+  <title>Caleb Chai | Robotics and Embedded Control Portfolio</title>
+
+  <meta name="description" content="Caleb Chai's personal portfolio: embedded systems, robot control, PCB design, RoboCup small-size soccer robots, humanoid motion imitation, and motor control research." />
+  <meta name="keywords" content="Caleb Chai, embedded systems, robot control, PCB design, RoboCup, Unitree G1, RSL-RL, GVHMR, GMR, VESC, motor control" />
+
+  <meta property="og:title" content="Caleb Chai | Robotics and Embedded Control Portfolio" />
+  <meta property="og:description" content="Portfolio of Caleb Chai, focusing on embedded systems, robot control, PCB design, humanoid motion imitation, and motor control." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/avatar.jpg" />
 
   <style>
     * {
@@ -175,6 +183,31 @@
       border: 1px solid #bfdbfe;
     }
 
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .highlight-item {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-size: 24px;
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    .highlight-item p {
+      margin: 0;
+      color: #4b5563;
+    }
+
     .tag-list {
       margin: 14px 0 16px;
     }
@@ -252,7 +285,7 @@
       margin-bottom: 8px;
     }
 
-    .competition-card .competition-meta {
+    .competition-meta {
       color: #6b7280;
       font-size: 14px;
       margin-bottom: 12px;
@@ -483,19 +516,19 @@
         <h1>Caleb Chai</h1>
 
         <p class="zh">
-          自动化本科生｜嵌入式开发｜机器人控制｜PCB 设计｜强化学习
+          面向机器人与物流自动化的嵌入式控制、运动控制与强化学习系统开发。
         </p>
 
         <p class="en">
-          Automation Student | Embedded Systems | Robot Control | PCB Design | Reinforcement Learning
+          Building embedded control, motion control, and learning-based robotic systems for robotics and logistics automation.
         </p>
 
         <p class="zh">
-          关注嵌入式系统、电机控制、机器人硬件、人形机器人动作模仿与智能控制系统开发。
+          自动化本科生｜嵌入式开发｜机器人控制｜PCB 设计｜电机控制｜强化学习
         </p>
 
         <p class="en">
-          Focused on embedded systems, motor control, robot hardware, humanoid motion imitation, and intelligent control systems.
+          Automation Student | Embedded Systems | Robot Control | PCB Design | Motor Control | Reinforcement Learning
         </p>
 
         <div class="buttons">
@@ -522,6 +555,11 @@
     <a href="#about">
       <span class="zh">关于我</span>
       <span class="en">About</span>
+    </a>
+
+    <a href="#highlights">
+      <span class="zh">亮点</span>
+      <span class="en">Highlights</span>
     </a>
 
     <a href="#projects">
@@ -579,9 +617,50 @@
         humanoid motion imitation, and reinforcement learning.
         I have worked on shuttle controller systems, electric roller controllers, pressure-sensing gloves,
         six-axis force sensors, small-size soccer robots, smart car systems, and video-based humanoid motion imitation.
-        These experiences gave me hands-on engineering practice from hardware design and embedded development
-        to robot simulation and system-level debugging.
       </p>
+    </div>
+  </section>
+
+  <section id="highlights">
+    <h2>
+      <span class="zh">核心亮点</span>
+      <span class="en">Highlights</span>
+    </h2>
+
+    <div class="card">
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <strong>200 Hz → 1 kHz</strong>
+          <p>
+            <span class="zh">小型足球机器人电机控制频率提升</span>
+            <span class="en">Motor control frequency improvement for small-size soccer robots</span>
+          </p>
+        </div>
+
+        <div class="highlight-item">
+          <strong>I2C → CAN</strong>
+          <p>
+            <span class="zh">机器人电机通信架构升级</span>
+            <span class="en">Robot motor communication architecture upgrade</span>
+          </p>
+        </div>
+
+        <div class="highlight-item">
+          <strong>MP4 → G1</strong>
+          <p>
+            <span class="zh">从人体视频到 Unitree G1 动作模仿训练流程</span>
+            <span class="en">Human video to Unitree G1 motion imitation pipeline</span>
+          </p>
+        </div>
+
+        <div class="highlight-item">
+          <strong>VESC + Q-learning</strong>
+          <p>
+            <span class="zh">电动滚筒调速控制与 PID 参数优化研究</span>
+            <span class="en">Electric roller speed control and PID optimization research</span>
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -641,6 +720,7 @@
         src="assets/images/g1_pipeline.jpg"
         alt="GVHMR GMR RSL-RL pipeline"
         class="pipeline-img"
+        loading="lazy"
         onerror="this.style.display='none';"
       />
 
@@ -679,6 +759,18 @@
         <span class="tag">Motor Control</span>
         <span class="tag">Embedded Systems</span>
         <span class="tag">RoboCup</span>
+      </div>
+
+      <div class="research-note">
+        <p class="block zh">
+          项目重点：围绕小型足球机器人比赛中的实时控制和通信稳定性问题，
+          对电机通信、控制频率、IMU 数据接入和球位置感知方案进行了系统优化。
+        </p>
+
+        <p class="block en">
+          Project focus: improved real-time control and communication reliability for small-size soccer robots
+          by upgrading motor communication, control frequency, IMU integration, and ball-position sensing.
+        </p>
       </div>
 
       <ul class="block zh">
@@ -723,10 +815,10 @@
             <div class="competition-meta">RoboCup Small Size League</div>
 
             <div class="competition-media">
-              <img src="assets/images/世界赛/world_1.jpg" alt="RoboCup world competition photo 1" onerror="this.style.display='none';">
-              <img src="assets/images/世界赛/world_2.jpg" alt="RoboCup world competition photo 2" onerror="this.style.display='none';">
+              <img src="assets/images/world/world_1.jpg" alt="RoboCup world competition photo 1" loading="lazy" onerror="this.style.display='none';">
+              <img src="assets/images/world/world_2.jpg" alt="RoboCup world competition photo 2" loading="lazy" onerror="this.style.display='none';">
               <video controls muted preload="metadata" onerror="this.style.display='none';">
-                <source src="assets/images/世界赛/world_demo.mp4" type="video/mp4">
+                <source src="assets/images/world/world_demo.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -739,10 +831,10 @@
             <div class="competition-meta">RoboCup China Open</div>
 
             <div class="competition-media">
-              <img src="assets/images/国赛/china_1.jpg" alt="RoboCup China competition photo 1" onerror="this.style.display='none';">
-              <img src="assets/images/国赛/china_2.jpg" alt="RoboCup China competition photo 2" onerror="this.style.display='none';">
+              <img src="assets/images/china/china_1.jpg" alt="RoboCup China competition photo 1" loading="lazy" onerror="this.style.display='none';">
+              <img src="assets/images/china/china_2.jpg" alt="RoboCup China competition photo 2" loading="lazy" onerror="this.style.display='none';">
               <video controls muted preload="metadata" onerror="this.style.display='none';">
-                <source src="assets/images/国赛/china_demo.mp4" type="video/mp4">
+                <source src="assets/images/china/china_demo.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -755,10 +847,10 @@
             <div class="competition-meta">Zhejiang Robot Competition</div>
 
             <div class="competition-media">
-              <img src="assets/images/省赛/zhejiang_1.jpg" alt="Zhejiang competition photo 1" onerror="this.style.display='none';">
-              <img src="assets/images/省赛/zhejiang_2.jpg" alt="Zhejiang competition photo 2" onerror="this.style.display='none';">
+              <img src="assets/images/zhejiang/zhejiang_1.jpg" alt="Zhejiang competition photo 1" loading="lazy" onerror="this.style.display='none';">
+              <img src="assets/images/zhejiang/zhejiang_2.jpg" alt="Zhejiang competition photo 2" loading="lazy" onerror="this.style.display='none';">
               <video controls muted preload="metadata" onerror="this.style.display='none';">
-                <source src="assets/images/省赛/zhejiang_demo.mp4" type="video/mp4">
+                <source src="assets/images/zhejiang/zhejiang_demo.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -796,25 +888,9 @@
         and host-computer data visualization.
       </p>
 
-      <ul class="block zh">
-        <li>基于 ESP32-S3 和专用采集芯片搭建六维力传感器采集系统。</li>
-        <li>使用 KiCad 完成原理图和 PCB 设计，并进行焊接与硬件调试。</li>
-        <li>使用 ESP-IDF 编写 SPI 通信协议，实现传感器数据读取。</li>
-        <li>通过 UART 将采集数据发送至上位机，用于后续分析和可视化。</li>
-        <li>系统已用于机械臂末端力感知测试。</li>
-      </ul>
-
-      <ul class="block en">
-        <li>Built a six-axis force sensor acquisition system based on ESP32-S3 and dedicated acquisition chips.</li>
-        <li>Completed schematic and PCB design using KiCad, followed by soldering and hardware debugging.</li>
-        <li>Implemented SPI communication using ESP-IDF for sensor data acquisition.</li>
-        <li>Transmitted collected data to the host computer through UART for analysis and visualization.</li>
-        <li>Used the system for robotic arm end-effector force sensing tests.</li>
-      </ul>
-
       <div class="image-grid">
         <div class="image-card">
-          <img src="assets/images/force_sensor_1.jpg" alt="Six-axis force sensor" onerror="this.parentElement.style.display='none';">
+          <img src="assets/images/force_sensor_1.jpg" alt="Six-axis force sensor prototype" loading="lazy" onerror="this.parentElement.style.display='none';">
           <p>
             <span class="zh">六维力传感器实物</span>
             <span class="en">Six-axis force sensor prototype</span>
@@ -822,7 +898,7 @@
         </div>
 
         <div class="image-card">
-          <img src="assets/images/force_sensor_pcb.jpg" alt="Six-axis force sensor PCB" onerror="this.parentElement.style.display='none';">
+          <img src="assets/images/force_sensor_pcb.jpg" alt="Six-axis force sensor PCB" loading="lazy" onerror="this.parentElement.style.display='none';">
           <p>
             <span class="zh">传感器采集 PCB / 硬件调试</span>
             <span class="en">Sensor acquisition PCB / hardware debugging</span>
@@ -861,25 +937,9 @@
         Python and Matplotlib are then used to visualize pressure changes across different hand regions.
       </p>
 
-      <ul class="block zh">
-        <li>设计压力传感手套的数据采集系统，实现多通道压力数据读取。</li>
-        <li>基于 ESP-IDF 编写嵌入式程序，完成传感器通信与数据处理。</li>
-        <li>通过 UART 将传感器数据传输至上位机。</li>
-        <li>使用 Python Matplotlib 对压力数据进行可视化，辅助分析手部受力变化。</li>
-        <li>完成从传感器采集、嵌入式传输到上位机显示的完整数据链路。</li>
-      </ul>
-
-      <ul class="block en">
-        <li>Designed a data acquisition system for a pressure-sensing glove with multiple pressure channels.</li>
-        <li>Developed embedded software using ESP-IDF for sensor communication and data processing.</li>
-        <li>Transmitted sensor data to the host computer through UART.</li>
-        <li>Used Python Matplotlib to visualize pressure data and analyze force distribution across the hand.</li>
-        <li>Completed the full data pipeline from sensor acquisition and embedded transmission to host-computer visualization.</li>
-      </ul>
-
       <div class="image-grid">
         <div class="image-card">
-          <img src="assets/images/glove_1.jpg" alt="Pressure-sensing glove" onerror="this.parentElement.style.display='none';">
+          <img src="assets/images/glove_1.jpg" alt="Pressure-sensing glove prototype" loading="lazy" onerror="this.parentElement.style.display='none';">
           <p>
             <span class="zh">压力传感手套实物</span>
             <span class="en">Pressure-sensing glove prototype</span>
@@ -887,7 +947,7 @@
         </div>
 
         <div class="image-card">
-          <img src="assets/images/glove_data_visualization.jpg" alt="Pressure data visualization" onerror="this.parentElement.style.display='none';">
+          <img src="assets/images/glove_data_visualization.jpg" alt="Pressure data visualization" loading="lazy" onerror="this.parentElement.style.display='none';">
           <p>
             <span class="zh">压力数据上位机可视化</span>
             <span class="en">Pressure data visualization on host computer</span>
@@ -1306,7 +1366,20 @@
   <script>
     function toggleLanguage() {
       document.body.classList.toggle("english");
+
+      if (document.body.classList.contains("english")) {
+        localStorage.setItem("language", "en");
+      } else {
+        localStorage.setItem("language", "zh");
+      }
     }
+
+    window.addEventListener("DOMContentLoaded", function () {
+      const savedLanguage = localStorage.getItem("language");
+      if (savedLanguage === "en") {
+        document.body.classList.add("english");
+      }
+    });
   </script>
 </body>
 </html>
