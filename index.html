@@ -3,163 +3,712 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caleb | Personal Homepage</title>
+
+  <title>Caleb Chai | Personal Homepage</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, "Microsoft YaHei", sans-serif;
-      background: #f5f7fa;
-      color: #222;
-      line-height: 1.6;
+      background: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.7;
     }
 
     header {
-      background: #111827;
+      background: linear-gradient(135deg, #111827, #1e3a8a);
       color: white;
       padding: 80px 20px;
-      text-align: center;
     }
 
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      flex-wrap: wrap;
     }
 
-    header p {
+    .avatar {
+      width: 185px;
+      height: 185px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      background: #ddd;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin: 0 0 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
       font-size: 20px;
-      color: #d1d5db;
+      color: #dbeafe;
+      margin: 8px 0;
+    }
+
+    .buttons {
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 19px;
+      margin: 6px 8px 6px 0;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #1e3a8a;
+    }
+
+    .btn-secondary {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-dark {
+      background: #111827;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     nav {
       background: white;
-      padding: 15px;
+      padding: 14px 20px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #e5e7eb;
       position: sticky;
       top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
     }
 
-    nav a {
-      margin: 0 15px;
+    nav a,
+    nav button {
+      margin: 0 10px;
       text-decoration: none;
       color: #111827;
       font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    nav button {
+      color: #2563eb;
     }
 
     section {
-      max-width: 900px;
-      margin: 50px auto;
+      max-width: 1050px;
+      margin: 58px auto;
       padding: 0 20px;
     }
 
     h2 {
-      border-left: 5px solid #2563eb;
-      padding-left: 12px;
+      font-size: 29px;
+      border-left: 6px solid #2563eb;
+      padding-left: 14px;
+      margin-bottom: 24px;
       color: #111827;
     }
 
     .card {
       background: white;
-      padding: 24px;
-      margin: 20px 0;
+      padding: 28px;
+      margin: 22px 0;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 22px;
+    }
+
+    .meta {
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .highlight {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+
+    .pipeline-img {
+      width: 100%;
       border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-top: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .video-card {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .video-card h4 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .video-card video {
+      width: 100%;
+      border-radius: 12px;
+      background: #000;
     }
 
     .skills span {
       display: inline-block;
       background: #e5e7eb;
+      color: #111827;
       padding: 8px 14px;
       margin: 6px;
-      border-radius: 20px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 34px 20px;
       background: #111827;
       color: #d1d5db;
-      margin-top: 60px;
+      margin-top: 70px;
+    }
+
+    .en {
+      display: none;
+    }
+
+    .block.en {
+      display: none;
+    }
+
+    body.english .zh {
+      display: none;
+    }
+
+    body.english .en {
+      display: inline;
+    }
+
+    body.english .block.en {
+      display: block;
+    }
+
+    body.english .block.zh {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 60px 20px;
+      }
+
+      .hero {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      nav a,
+      nav button {
+        display: inline-block;
+        margin: 6px;
+      }
+
+      .card {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Caleb Chai</h1>
-    <p>Mechanical Engineering Graduate Student | Robotics | Control Systems | Fluid Simulation</p>
+    <div class="hero">
+      <img src="assets/avatar.jpg" alt="Caleb Chai" class="avatar" />
+
+      <div class="hero-text">
+        <h1>Caleb Chai</h1>
+
+        <p class="zh">
+          自动化本科生｜嵌入式开发｜机器人控制｜PCB 设计｜强化学习
+        </p>
+
+        <p class="en">
+          Automation Student | Embedded Systems | Robot Control | PCB Design | Reinforcement Learning
+        </p>
+
+        <p class="zh">
+          关注嵌入式系统、电机控制、机器人硬件、人形机器人动作模仿与智能控制系统开发。
+        </p>
+
+        <p class="en">
+          Focused on embedded systems, motor control, robot hardware, humanoid motion imitation, and intelligent control systems.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="assets/resume.pdf" target="_blank">
+            <span class="zh">查看简历</span>
+            <span class="en">View Resume</span>
+          </a>
+
+          <a class="btn btn-secondary" href="#projects">
+            <span class="zh">查看项目</span>
+            <span class="en">View Projects</span>
+          </a>
+
+          <a class="btn btn-secondary" href="#contact">
+            <span class="zh">联系我</span>
+            <span class="en">Contact Me</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">
+      <span class="zh">关于我</span>
+      <span class="en">About</span>
+    </a>
+
+    <a href="#projects">
+      <span class="zh">项目</span>
+      <span class="en">Projects</span>
+    </a>
+
+    <a href="#experience">
+      <span class="zh">实习</span>
+      <span class="en">Experience</span>
+    </a>
+
+    <a href="#skills">
+      <span class="zh">技能</span>
+      <span class="en">Skills</span>
+    </a>
+
+    <a href="#contact">
+      <span class="zh">联系</span>
+      <span class="en">Contact</span>
+    </a>
+
+    <button onclick="toggleLanguage()">中文 / EN</button>
   </nav>
 
   <section id="about">
-    <h2>About Me</h2>
+    <h2>
+      <span class="zh">关于我</span>
+      <span class="en">About Me</span>
+    </h2>
+
     <div class="card">
-      <p>
-        I am a graduate student with interests in robotics, control systems, reinforcement learning,
-        and fluid simulation. My work focuses on combining engineering modeling, simulation,
-        and intelligent algorithms to solve practical problems.
+      <p class="block zh">
+        我是浙江大学控制科学与工程学院自动化专业本科生，预计 2026 年 7 月毕业。
+        我的主要方向包括嵌入式系统、PCB 设计、电机控制、机器人控制、人形机器人动作模仿和强化学习。
+        我参与过穿梭车控制器、电滚筒控制器、压力传感手套、六维力传感器、小型足球机器人、
+        智能车竞赛以及基于视频的人形机器人动作模仿训练项目，具备从硬件设计、嵌入式开发、
+        机器人仿真到系统调试的综合工程实践经验。
+      </p>
+
+      <p class="block en">
+        I am an undergraduate student in Automation at the College of Control Science and Engineering,
+        Zhejiang University, expected to graduate in July 2026.
+        My interests include embedded systems, PCB design, motor control, robot control,
+        humanoid motion imitation, and reinforcement learning.
+        I have worked on shuttle controller systems, electric roller controllers, pressure-sensing gloves,
+        six-axis force sensors, small-size soccer robots, smart car systems, and video-based humanoid motion imitation.
+        These experiences gave me hands-on engineering practice from hardware design and embedded development
+        to robot simulation and system-level debugging.
       </p>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>
+      <span class="zh">项目经历</span>
+      <span class="en">Projects</span>
+    </h2>
 
-    <div class="card">
-      <h3>Robot Motion Control and Reinforcement Learning</h3>
-      <p>
-        Built and tested simulation-based robot control workflows using reinforcement learning,
-        focusing on motion training, deployment, and system debugging.
+    <div class="card highlight">
+      <h3>
+        <span class="zh">基于视频的人形机器人动作模仿训练系统</span>
+        <span class="en">Video-based Humanoid Robot Motion Imitation Pipeline</span>
+      </h3>
+
+      <div class="meta">
+        MP4 Video → GVHMR → GMR → RSL-RL / Isaac Lab → Unitree G1
+      </div>
+
+      <p class="block zh">
+        本项目构建了一套从普通人体动作视频到人形机器人模仿训练的完整流程。
+        首先使用 GVHMR 从 MP4 视频中恢复人体三维运动，再通过 GMR 将人体动作重定向到 Unitree G1 人形机器人模型，
+        随后将动作数据转换为 RSL-RL / Isaac Lab 可用于训练的数据格式，并进行强化学习模仿训练与策略测试。
+        项目重点解决人体动作恢复、机器人关节映射、动作数据转换、仿真训练和策略验证之间的工程衔接问题。
       </p>
+
+      <p class="block en">
+        This project builds an end-to-end pipeline from ordinary human motion videos to humanoid robot imitation learning.
+        GVHMR is used to recover 3D human motion from MP4 videos, and GMR is then applied to retarget the recovered motion
+        to the Unitree G1 humanoid robot model. The retargeted motion data is converted into formats suitable for
+        RSL-RL / Isaac Lab training, followed by reinforcement learning-based motion imitation and policy evaluation.
+        The project focuses on the engineering connection between human motion recovery, robot joint mapping,
+        motion data conversion, simulation training, and policy testing.
+      </p>
+
+      <ul class="block zh">
+        <li>使用 GVHMR 从单目 MP4 视频中恢复人体全局运动与姿态信息。</li>
+        <li>使用 GMR 将人体 SMPL / SMPL-X 动作重定向到 Unitree G1 机器人关节空间。</li>
+        <li>将动作数据转换为机器人模仿学习训练所需的 NPZ / 轨迹数据格式。</li>
+        <li>基于 RSL-RL / Isaac Lab 进行人形机器人动作模仿训练。</li>
+        <li>完成从视频输入、动作恢复、机器人重定向到仿真策略测试的完整闭环。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Recovered global human motion and pose information from monocular MP4 videos using GVHMR.</li>
+        <li>Retargeted SMPL / SMPL-X human motion to the Unitree G1 robot joint space using GMR.</li>
+        <li>Converted motion data into NPZ / trajectory formats required for robot imitation learning.</li>
+        <li>Trained humanoid motion imitation policies using RSL-RL / Isaac Lab.</li>
+        <li>Completed an end-to-end workflow from video input and motion recovery to robot retargeting and policy testing.</li>
+      </ul>
+
+      <img
+        src="assets/images/g1_pipeline.jpg"
+        alt="GVHMR GMR RSL-RL pipeline"
+        class="pipeline-img"
+        onerror="this.style.display='none';"
+      />
+
+      <div class="video-grid">
+        <div class="video-card">
+          <h4>
+            <span class="zh">原始动作视频</span>
+            <span class="en">Input Motion Video</span>
+          </h4>
+
+          <video controls muted preload="metadata">
+            <source src="assets/videos/input_motion.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h4>
+            <span class="zh">GVHMR 动作恢复结果</span>
+            <span class="en">GVHMR Motion Recovery</span>
+          </h4>
+
+          <video controls muted preload="metadata">
+            <source src="assets/videos/gvhmr_result.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h4>
+            <span class="zh">GMR 机器人重定向结果</span>
+            <span class="en">GMR Robot Retargeting</span>
+          </h4>
+
+          <video controls muted preload="metadata">
+            <source src="assets/videos/gmr_retarget.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h4>
+            <span class="zh">RSL-RL 模仿训练结果</span>
+            <span class="en">RSL-RL Imitation Result</span>
+          </h4>
+
+          <video controls muted preload="metadata">
+            <source src="assets/videos/rslrl_policy.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Fluid Simulation and Bio-inspired Propulsion</h3>
-      <p>
-        Conducted CFD simulations for low-Reynolds-number biological swimming and propulsion
-        mechanisms under constrained environments.
-      </p>
+      <h3>
+        <span class="zh">ZJUNlict 小型足球机器人实验室｜电路组核心队员</span>
+        <span class="en">ZJUNlict Small-Size Soccer Robot Lab | Core Circuit Team Member</span>
+      </h3>
+
+      <div class="meta">2023.09 - Present</div>
+
+      <ul class="block zh">
+        <li>负责实验室电路组项目管理、PCB 设计与焊接、嵌入式开发。</li>
+        <li>带领组员重构电机通信与控制方式，将 I2C 控制通信改为 CAN 通信。</li>
+        <li>为电机控制增加电流环，将控制频率从 200Hz 提升到 1kHz。</li>
+        <li>为机器人增加 IMU，并将 IMU 数据传输至树莓派，用于提升控制精度。</li>
+        <li>使用反射式红外阵列改进球位置感知方式，将球位置信息从一维提升到二维。</li>
+        <li>获得 RoboCup 机器人世界杯小型组亚军、RoboCup 中国公开赛小型组一等奖、RoboCup 日本公开赛小型组季军、浙江省机器人大赛省二等奖。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Responsible for circuit team project management, PCB design, soldering, and embedded development.</li>
+        <li>Led the reconstruction of the motor communication and control architecture by replacing I2C with CAN.</li>
+        <li>Added current-loop motor control and increased the motor control frequency from 200Hz to 1kHz.</li>
+        <li>Integrated IMU sensing and transmitted IMU data to the Raspberry Pi to improve control accuracy.</li>
+        <li>Improved ball-position sensing using a reflective infrared array, upgrading the ball-position information from one dimension to two dimensions.</li>
+        <li>Achieved strong competition results, including runner-up in RoboCup Small Size League, first prize in RoboCup China Open, third place in RoboCup Japan Open, and second prize in the Zhejiang Robot Competition.</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>Embedded and Hardware Development</h3>
-      <p>
-        Worked on motor control, drive cards, embedded systems, and hardware testing for engineering applications.
-      </p>
+      <h3>
+        <span class="zh">压力传感手套与六维力传感器</span>
+        <span class="en">Pressure-sensing Glove and Six-axis Force Sensor</span>
+      </h3>
+
+      <div class="meta">Hangzhou Tuling Robot | 2024.03 - 2025.01</div>
+
+      <ul class="block zh">
+        <li>设计并开发基于 ESP32-S3 和专用采集芯片的传感器数据采集系统。</li>
+        <li>使用 KiCad 完成原理图和 PCB 设计，并进行焊接和硬件调试。</li>
+        <li>基于 ESP-IDF 使用 C 语言编写 SPI 通信协议，实现传感器数据采集。</li>
+        <li>通过 UART 将传感器数据传输至上位机，并使用 Python Matplotlib 进行数据可视化。</li>
+        <li>六维力传感器已用于机械臂末端感知测试。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Designed and developed sensor acquisition systems based on ESP32-S3 and dedicated acquisition chips.</li>
+        <li>Completed schematic and PCB design using KiCad, followed by soldering and hardware debugging.</li>
+        <li>Implemented SPI communication in C using ESP-IDF for sensor data acquisition.</li>
+        <li>Transmitted sensor data to the host computer through UART and visualized the data using Python Matplotlib.</li>
+        <li>The six-axis force sensor was used for end-effector sensing tests on robotic arms.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="zh">四轮机器人系统迭代</span>
+        <span class="en">Four-wheel Robot System Iteration</span>
+      </h3>
+
+      <div class="meta">Hangzhou Tuling Robot | 2024.03 - 2025.01</div>
+
+      <ul class="block zh">
+        <li>基于前一版本机器人进行硬件和控制系统迭代。</li>
+        <li>将嘉立创 EDA 上的 PCB 设计图和原理图迁移至 KiCad。</li>
+        <li>将输入电压从 16V 提升至 24V，提高系统驱动能力。</li>
+        <li>采用 VESC 开源控制方案控制电机。</li>
+        <li>在增加电流环反馈后，在不牺牲性能的情况下将成本降至原来的约 20%。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Iterated the hardware and control system based on the previous version of the robot.</li>
+        <li>Migrated PCB designs and schematics from JLC EDA to KiCad.</li>
+        <li>Increased the input voltage from 16V to 24V to improve system driving capability.</li>
+        <li>Adopted the VESC open-source control solution for motor control.</li>
+        <li>Added current-loop feedback and reduced cost to about 20% of the original cost without sacrificing performance.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="zh">浙江省大学生智能车竞赛</span>
+        <span class="en">Zhejiang University Student Smart Car Competition</span>
+      </h3>
+
+      <div class="meta">2023.01 - 2023.08</div>
+
+      <ul class="block zh">
+        <li>负责硬件搭建、传感器选型与调试。</li>
+        <li>使用 Altium Designer 对 PCB 图和硬件方案进行适配与优化。</li>
+        <li>使用红外传感器模块实现障碍物测距与避障。</li>
+        <li>获得浙江省三等奖。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Responsible for hardware setup, sensor selection, and debugging.</li>
+        <li>Adapted and optimized PCB and hardware designs using Altium Designer.</li>
+        <li>Implemented obstacle distance measurement and avoidance using infrared sensor modules.</li>
+        <li>Won the third prize in the Zhejiang provincial competition.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>
+      <span class="zh">实习经历</span>
+      <span class="en">Experience</span>
+    </h2>
+
+    <div class="card">
+      <h3>
+        <span class="zh">杭州千二科技有限公司｜嵌入式与电路实习生</span>
+        <span class="en">Hangzhou Qianer Technology | Embedded and Circuit Intern</span>
+      </h3>
+
+      <div class="meta">2025.01 - Present</div>
+
+      <ul class="block zh">
+        <li>参与穿梭车控制器和电滚筒控制器开发。</li>
+        <li>负责传感器处理、状态机设计和 FOC 电机控制算法实现。</li>
+        <li>基于 STM32 设计控制器方案，用于替代传统工业 PLC，降低系统硬件成本。</li>
+        <li>根据实际工况设计控制策略，实现电流环闭环控制与状态反馈机制。</li>
+        <li>配合机械系统调试控制参数，优化设备运行效率。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Worked on shuttle controller and electric roller controller development.</li>
+        <li>Responsible for sensor processing, state-machine design, and FOC motor control implementation.</li>
+        <li>Designed STM32-based controller solutions to replace traditional industrial PLCs and reduce hardware cost.</li>
+        <li>Developed control strategies based on real operating conditions, including current-loop closed-loop control and state feedback.</li>
+        <li>Collaborated with mechanical debugging to optimize system performance and operation efficiency.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="zh">杭州途零机器人有限公司｜嵌入式与电路实习生</span>
+        <span class="en">Hangzhou Tuling Robot | Embedded and Circuit Intern</span>
+      </h3>
+
+      <div class="meta">2024.03 - 2025.01</div>
+
+      <ul class="block zh">
+        <li>负责原理图设计、PCB 设计与焊接、嵌入式程序开发。</li>
+        <li>参与压力传感手套、六维力传感器和四轮机器人项目。</li>
+        <li>完成传感器采集系统、通信协议、上位机数据传输和数据可视化相关工作。</li>
+        <li>参与机器人硬件系统迭代、电机控制方案优化与成本降低。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Worked on schematic design, PCB design, soldering, and embedded software development.</li>
+        <li>Contributed to pressure-sensing glove, six-axis force sensor, and four-wheel robot projects.</li>
+        <li>Developed sensor acquisition systems, communication protocols, host-computer data transmission, and data visualization workflows.</li>
+        <li>Participated in robot hardware iteration, motor control optimization, and cost reduction.</li>
+      </ul>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>
+      <span class="zh">技能栈</span>
+      <span class="en">Skills</span>
+    </h2>
+
     <div class="card skills">
+      <span>C</span>
+      <span>C++</span>
       <span>Python</span>
-      <span>MATLAB</span>
-      <span>CFD</span>
-      <span>ANSYS Fluent</span>
-      <span>ROS</span>
-      <span>Reinforcement Learning</span>
+      <span>STM32</span>
+      <span>ESP32-S3</span>
+      <span>ESP-IDF</span>
+      <span>Arduino</span>
+      <span>Keil 5</span>
+      <span>STM32CubeIDE</span>
+      <span>Altium Designer</span>
+      <span>KiCad</span>
+      <span>JLC EDA</span>
+      <span>PCB Design</span>
       <span>Embedded Systems</span>
-      <span>Git</span>
+      <span>CAN</span>
+      <span>SPI</span>
+      <span>UART</span>
+      <span>I2C</span>
+      <span>FOC Motor Control</span>
+      <span>VESC</span>
+      <span>MATLAB</span>
+      <span>Matplotlib</span>
+      <span>PyTorch</span>
+      <span>Isaac Lab</span>
+      <span>RSL-RL</span>
+      <span>GVHMR</span>
+      <span>GMR</span>
+      <span>Unitree G1</span>
+      <span>Robot Control</span>
+      <span>Reinforcement Learning</span>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: your-email@example.com</p>
-      <p>GitHub: https://github.com/your-username</p>
-      <p>LinkedIn: https://linkedin.com/in/your-name</p>
+    <h2>
+      <span class="zh">联系我</span>
+      <span class="en">Contact</span>
+    </h2>
+
+    <div class="card contact">
+      <p>Email: <a href="mailto:yinncaleb@gmail.com">yinncaleb@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/CalebChai" target="_blank">github.com/CalebChai</a></p>
+
+      <p class="zh">
+        更完整的信息可以查看上方 PDF 简历。公开主页不建议直接展示手机号。
+      </p>
+
+      <p class="en">
+        For more detailed information, please refer to the PDF resume above. Displaying a phone number directly on a public website is not recommended.
+      </p>
     </div>
   </section>
 
   <footer>
     <p>© 2026 Caleb Chai. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleLanguage() {
+      document.body.classList.toggle("english");
+    }
+  </script>
 </body>
 </html>
