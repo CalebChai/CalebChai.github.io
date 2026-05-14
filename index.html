@@ -784,8 +784,8 @@
 
     <div class="card">
       <h3>
-        <span class="zh">本科毕业论文 / 毕业设计</span>
-        <span class="en">Undergraduate Graduation Thesis</span>
+        <span class="zh">本科毕业论文：基于无感 FOC 与 Q-learning PID 优化的电动滚筒调速控制研究</span>
+        <span class="en">Undergraduate Thesis: Electric Roller Speed Control Based on Sensorless FOC and Q-learning PID Optimization</span>
       </h3>
 
       <div class="meta">
@@ -794,36 +794,69 @@
       </div>
 
       <div class="tag-list">
-        <span class="tag">Robot Control</span>
-        <span class="tag">Reinforcement Learning</span>
-        <span class="tag">Simulation</span>
-        <span class="tag">Control Systems</span>
+        <span class="tag">Electric Roller</span>
+        <span class="tag">Sensorless FOC</span>
+        <span class="tag">Q-learning</span>
+        <span class="tag">PID Optimization</span>
+        <span class="tag">VESC</span>
+        <span class="tag">Motor Control</span>
+        <span class="tag">Logistics Automation</span>
       </div>
 
       <p class="block zh">
-        围绕机器人控制、强化学习或嵌入式控制系统开展毕业设计研究，
-        重点关注控制策略设计、仿真验证、系统实现与实验分析。
-        项目仍在进行中，后续将补充完整论文、实验结果和相关材料。
+        本科毕业论文聚焦于物流自动化场景下电动滚筒的调速控制问题。
+        针对传统 PID 参数整定依赖经验、难以适应复杂工况的问题，研究基于无位置传感器
+        FOC 的电机控制方法，并结合 Q-learning 强化学习算法对速度环 PID 参数进行优化。
+        控制系统基于 Benjamin Vedder Electric Speed Controller（VESC）开源平台搭建，
+        重点验证算法在目标转速跟踪、稳态误差、动态响应和突加负载扰动下的控制性能。
       </p>
 
       <p class="block en">
-        Conducting undergraduate thesis research related to robot control, reinforcement learning,
-        or embedded control systems, with a focus on control strategy design, simulation validation,
-        system implementation, and experimental analysis.
-        The project is currently ongoing, and the complete thesis, results, and related materials
-        will be updated later.
+        This undergraduate thesis focuses on speed control for electric rollers in logistics automation systems.
+        To address the limitations of manually tuned PID parameters under varying operating conditions,
+        the project studies a sensorless Field-Oriented Control method and applies Q-learning to optimize
+        the PID parameters of the speed loop. The control system is built on the Benjamin Vedder Electric Speed Controller
+        VESC open-source platform, with evaluation focused on speed tracking, steady-state error,
+        dynamic response, and robustness under sudden load disturbances.
       </p>
+
+      <ul class="block zh">
+        <li>研究无位置传感器 FOC 控制策略，降低系统对位置传感器的依赖。</li>
+        <li>结合滑模观测器与高频注入方法，实现转子位置与速度估计。</li>
+        <li>使用 Q-learning 对速度环 PID 参数进行自动优化。</li>
+        <li>基于 VESC 平台搭建电动滚筒控制实验系统。</li>
+        <li>实验评价指标包括稳态误差、上升时间、超调、振荡和负载扰动恢复性能。</li>
+      </ul>
+
+      <ul class="block en">
+        <li>Studied sensorless FOC control to reduce dependence on mechanical position sensors.</li>
+        <li>Combined sliding-mode observer and high-frequency injection methods for rotor position and speed estimation.</li>
+        <li>Applied Q-learning to automatically optimize speed-loop PID parameters.</li>
+        <li>Built an electric roller control test system based on the VESC platform.</li>
+        <li>Evaluated steady-state error, rise time, overshoot, oscillation, and recovery under sudden load disturbance.</li>
+      </ul>
 
       <div class="research-note">
         <p class="block zh">
-          毕业论文未定稿前，不建议上传完整 PDF。等最终版完成后再放，避免公开未成熟内容。
+          注：毕业论文未最终提交前，不建议公开上传全文 PDF。当前主页先展示研究方向、方法路线与工程平台；
+          等学校提交完成后，再补充最终论文或答辩材料。
         </p>
 
         <p class="block en">
-          It is not recommended to upload the full thesis PDF before final submission.
-          The complete thesis can be added after the final version is ready.
+          Note: It is not recommended to publicly upload the full thesis before final submission.
+          This homepage currently presents the research direction, methodology, and engineering platform.
+          The final thesis or defense materials can be added after university submission.
         </p>
       </div>
+
+      <!--
+      毕业论文最终版完成后，可以取消下面按钮注释，并把文件放到 assets/papers/graduation_thesis.pdf
+
+      <a class="btn btn-dark" href="assets/papers/graduation_thesis.pdf" target="_blank">
+        <span class="zh">查看毕业论文 PDF</span>
+        <span class="en">View Thesis PDF</span>
+      </a>
+      -->
     </div>
   </section>
 
@@ -1015,6 +1048,9 @@
       <span>Unitree G1</span>
       <span>Robot Control</span>
       <span>Reinforcement Learning</span>
+      <span>Q-learning</span>
+      <span>PID Optimization</span>
+      <span>Sensorless FOC</span>
     </div>
   </section>
 
