@@ -520,6 +520,11 @@
             <span class="en">View Projects</span>
           </a>
 
+          <a class="btn btn-secondary" href="more-projects.html">
+            <span class="zh">更多项目</span>
+            <span class="en">More Projects</span>
+          </a>
+
           <a class="btn btn-secondary" href="#contact">
             <span class="zh">联系我</span>
             <span class="en">Contact Me</span>
@@ -538,6 +543,11 @@
     <a href="#projects">
       <span class="zh">项目</span>
       <span class="en">Projects</span>
+    </a>
+
+    <a href="more-projects.html">
+      <span class="zh">更多项目</span>
+      <span class="en">More Projects</span>
     </a>
 
     <a href="#research">
@@ -785,170 +795,6 @@
               </video>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>
-        <span class="zh">基于 RRT 算法的小型 AGV 路径规划研究</span>
-        <span class="en">Small AGV Path Planning Based on RRT Algorithms</span>
-      </h3>
-
-      <div class="meta">
-        <span class="zh">Course Project | Zhejiang University | 2024</span>
-        <span class="en">Course Project | Zhejiang University | 2024</span>
-      </div>
-
-      <div class="tag-list">
-        <span class="tag">AGV</span>
-        <span class="tag">Path Planning</span>
-        <span class="tag">RRT</span>
-        <span class="tag">RRT*</span>
-        <span class="tag">RRT-Connect</span>
-        <span class="tag">Dynamic Obstacle Avoidance</span>
-        <span class="tag">Robot Navigation</span>
-      </div>
-
-      <p class="block zh">
-        本项目使用小型足球机器人模拟物流自动化场景中的 AGV 路径规划问题，
-        研究基于 RRT 的路径规划方法在复杂障碍物环境下的自主导航和避障效果。
-        实验模拟了二维仓储环境，并考虑随机障碍物、多 AGV 路径干涉和动态避碰问题。
-      </p>
-
-      <p class="block en">
-        This project used a small-size soccer robot to simulate AGV path planning in logistics automation scenarios.
-        It studied RRT-based path planning for autonomous navigation and obstacle avoidance in complex environments,
-        including randomly distributed obstacles, multi-AGV path interference, and dynamic collision avoidance.
-      </p>
-
-      <ul class="block zh">
-        <li>构建 5m × 10m 二维仓储环境，模拟货架、堆叠物等障碍物分布。</li>
-        <li>实现并对比 RRT、RRT* 和 RRT-Connect 等路径规划方法。</li>
-        <li>使用双向 RRT 思路，从起点和终点同时扩展搜索树，提高路径搜索效率。</li>
-        <li>设计路径干涉检测机制，在多个 AGV 路径相交时进行避让与重新规划。</li>
-        <li>实验结果显示算法能够在复杂障碍物环境中完成避障，并具备较好的实时性。</li>
-      </ul>
-
-      <ul class="block en">
-        <li>Built a 5m × 10m two-dimensional warehouse-like environment with simulated shelves and obstacles.</li>
-        <li>Implemented and compared RRT, RRT*, and RRT-Connect path planning methods.</li>
-        <li>Applied a bidirectional RRT strategy by expanding search trees from both the start and target positions.</li>
-        <li>Designed path interference detection for multi-AGV scenarios and triggered avoidance or replanning when needed.</li>
-        <li>Experimental results showed effective obstacle avoidance and good real-time performance in complex environments.</li>
-      </ul>
-
-      <div class="research-note">
-        <p class="block zh">
-          项目重点：该项目更适合放在“机器人算法 / 路径规划”方向下，能补强你主页里除了硬件和嵌入式之外的算法能力。
-          如果后续有路径规划动图或视频，建议补充到该项目中。
-        </p>
-
-        <p class="block en">
-          Project focus: this project strengthens the algorithmic side of the portfolio by showing robot path planning
-          and navigation ability in addition to hardware and embedded development.
-        </p>
-      </div>
-
-      <div class="image-grid">
-        <div class="image-card">
-          <img src="assets/images/rrt_path_planning.jpg" alt="RRT path planning result" loading="lazy" onerror="this.parentElement.style.display='none';">
-          <p>
-            <span class="zh">RRT 路径规划结果图</span>
-            <span class="en">RRT path planning result</span>
-          </p>
-        </div>
-
-        <div class="image-card">
-          <img src="assets/images/rrt_code_debug.jpg" alt="RRT path planning code and debugging" loading="lazy" onerror="this.parentElement.style.display='none';">
-          <p>
-            <span class="zh">路径规划代码与调试过程</span>
-            <span class="en">Path planning code and debugging process</span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>
-        <span class="zh">智能家居的智能联动与数据分析平台</span>
-        <span class="en">Smart Home Intelligent Linkage and Data Analysis Platform</span>
-      </h3>
-
-      <div class="meta">
-        <span class="zh">Automation Comprehensive Experiment | Zhejiang University | 2024</span>
-        <span class="en">Automation Comprehensive Experiment | Zhejiang University | 2024</span>
-      </div>
-
-      <div class="tag-list">
-        <span class="tag">ESP32-S3</span>
-        <span class="tag">ESP-IDF</span>
-        <span class="tag">ESPHome</span>
-        <span class="tag">Home Assistant</span>
-        <span class="tag">IoT</span>
-        <span class="tag">KiCad</span>
-        <span class="tag">Sensor Integration</span>
-        <span class="tag">Voice Control</span>
-      </div>
-
-      <p class="block zh">
-        本项目围绕智能家居场景，设计并实现了一个基于 ESP32-S3 的智能联动与数据分析平台。
-        系统集成温湿度、空气质量、人体红外、烟雾等传感器，并结合 LED 灯、风扇、加热器和蜂鸣器等执行器，
-        实现环境监测、设备联动、语音控制和远程管理。
-      </p>
-
-      <p class="block en">
-        This project designed and implemented an ESP32-S3 based smart home intelligent linkage and data analysis platform.
-        The system integrates temperature and humidity sensing, air quality monitoring, PIR motion detection, smoke detection,
-        and multiple actuators such as LEDs, fans, heaters, and buzzers for environmental monitoring, device automation,
-        voice control, and remote management.
-      </p>
-
-      <ul class="block zh">
-        <li>使用 ESP32-S3 DevKitC-1 作为核心控制器，完成多传感器与执行器集成。</li>
-        <li>集成 SHTC3 温湿度传感器、SGP30 空气质量传感器、PIR 红外传感器和烟雾传感器。</li>
-        <li>使用 VS Code + ESP-IDF 进行底层传感器和 GPIO 执行器调试。</li>
-        <li>结合 ESPHome 与 Home Assistant 实现设备接入、数据上传、自动化联动和 OTA 远程更新。</li>
-        <li>使用 ASR-PRO 离线语音识别模块实现本地语音控制功能。</li>
-        <li>使用 KiCad 完成双层 PCB 原理图设计、布局布线与 Gerber 文件输出。</li>
-      </ul>
-
-      <ul class="block en">
-        <li>Used ESP32-S3 DevKitC-1 as the core controller for sensor and actuator integration.</li>
-        <li>Integrated SHTC3 temperature and humidity sensor, SGP30 air quality sensor, PIR motion sensor, and smoke sensor.</li>
-        <li>Debugged low-level sensor communication and GPIO actuator control using VS Code and ESP-IDF.</li>
-        <li>Used ESPHome and Home Assistant for device integration, data upload, automation rules, and OTA updates.</li>
-        <li>Implemented local voice control using an ASR-PRO offline voice recognition module.</li>
-        <li>Completed schematic design, double-layer PCB layout, and Gerber output using KiCad.</li>
-      </ul>
-
-      <div class="research-note">
-        <p class="block zh">
-          项目重点：该项目能证明你具备完整的嵌入式 IoT 系统开发经验，从传感器调试、执行器控制、
-          Home Assistant 平台接入，到 KiCad PCB 设计和打样流程都有覆盖。
-        </p>
-
-        <p class="block en">
-          Project focus: this project demonstrates practical embedded IoT system development experience, covering sensor debugging,
-          actuator control, Home Assistant integration, KiCad PCB design, and hardware prototyping.
-        </p>
-      </div>
-
-      <div class="image-grid">
-        <div class="image-card">
-          <img src="assets/images/smart_home_system.jpg" alt="Smart home system prototype" loading="lazy" onerror="this.parentElement.style.display='none';">
-          <p>
-            <span class="zh">智能家居系统原型</span>
-            <span class="en">Smart home system prototype</span>
-          </p>
-        </div>
-
-        <div class="image-card">
-          <img src="assets/images/smart_home_pcb.jpg" alt="Smart home PCB design" loading="lazy" onerror="this.parentElement.style.display='none';">
-          <p>
-            <span class="zh">智能家居 PCB 设计 / 三维图</span>
-            <span class="en">Smart home PCB design / 3D view</span>
-          </p>
         </div>
       </div>
     </div>
