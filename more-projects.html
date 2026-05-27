@@ -282,12 +282,6 @@
       <span class="zh">主页</span>
       <span class="en">Home</span>
     </a>
-
-    <a href="#agv">
-      <span class="zh">AGV 路径规划</span>
-      <span class="en">AGV Path Planning</span>
-    </a>
-
     <a href="#smart-home">
       <span class="zh">智能家居</span>
       <span class="en">Smart Home</span>
@@ -295,83 +289,6 @@
 
     <button onclick="toggleLanguage()">中文 / EN</button>
   </nav>
-
-  <section id="agv">
-    <h2>
-      <span class="zh">机器人路径规划项目</span>
-      <span class="en">Robot Path Planning Project</span>
-    </h2>
-
-    <div class="card">
-      <h3>
-        <span class="zh">基于 RRT 算法的小型 AGV 路径规划研究</span>
-        <span class="en">Small AGV Path Planning Based on RRT Algorithms</span>
-      </h3>
-
-      <div class="meta">
-        <span class="zh">Course Project | Zhejiang University | 2024</span>
-        <span class="en">Course Project | Zhejiang University | 2024</span>
-      </div>
-
-      <div class="tag-list">
-        <span class="tag">AGV</span>
-        <span class="tag">Path Planning</span>
-        <span class="tag">RRT</span>
-        <span class="tag">RRT*</span>
-        <span class="tag">RRT-Connect</span>
-        <span class="tag">Dynamic Obstacle Avoidance</span>
-        <span class="tag">Robot Navigation</span>
-      </div>
-
-      <p class="block zh">
-        本项目使用小型足球机器人模拟物流自动化场景中的 AGV 路径规划问题，
-        研究基于 RRT 的路径规划方法在复杂障碍物环境下的自主导航和避障效果。
-        实验模拟二维仓储环境，并考虑随机障碍物、多 AGV 路径干涉和动态避碰问题。
-      </p>
-
-      <p class="block en">
-        This project used a small-size soccer robot to simulate AGV path planning in logistics automation scenarios.
-        It studied RRT-based path planning for autonomous navigation and obstacle avoidance in complex environments,
-        including randomly distributed obstacles, multi-AGV path interference, and dynamic collision avoidance.
-      </p>
-
-      <ul class="block zh">
-        <li>构建 5m × 10m 二维仓储环境，模拟货架、堆叠物等障碍物分布。</li>
-        <li>实现并对比 RRT、RRT* 和 RRT-Connect 等路径规划方法。</li>
-        <li>使用双向 RRT 思路，从起点和终点同时扩展搜索树，提高路径搜索效率。</li>
-        <li>设计路径干涉检测机制，在多个 AGV 路径相交时进行避让与重新规划。</li>
-        <li>实验结果显示算法能够在复杂障碍物环境中完成避障，并具备较好的实时性。</li>
-      </ul>
-
-      <ul class="block en">
-        <li>Built a 5m × 10m two-dimensional warehouse-like environment with simulated shelves and obstacles.</li>
-        <li>Implemented and compared RRT, RRT*, and RRT-Connect path planning methods.</li>
-        <li>Applied a bidirectional RRT strategy by expanding search trees from both the start and target positions.</li>
-        <li>Designed path interference detection for multi-AGV scenarios and triggered avoidance or replanning when needed.</li>
-        <li>Experimental results showed effective obstacle avoidance and good real-time performance in complex environments.</li>
-      </ul>
-
-      <div class="info-box">
-        <p class="block zh">
-          该项目展示了机器人路径规划、动态避障和多机器人路径干涉处理能力。
-        </p>
-
-        <p class="block en">
-          This project demonstrates robot path planning, dynamic obstacle avoidance, and multi-robot path interference handling.
-        </p>
-      </div>
-
-      <div class="image-grid">
-        <div class="image-card">
-          <img src="assets/images/rrt_path_planning.jpg" alt="RRT path planning result" loading="lazy" onerror="this.parentElement.style.display='none';">
-          <p>
-            <span class="zh">RRT 路径规划结果图</span>
-            <span class="en">RRT path planning result</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="smart-home">
     <h2>
